@@ -1,0 +1,19 @@
+[
+    {
+      "id": 1,
+      "stationId": 1,
+      "userId": 101,
+      "startTime": "2024-07-01T08:00",
+      "endTime": "2024-07-01T10:00",
+      "status": "PENDING"
+    },
+    {
+      "id": 2,
+      "stationId": 2,
+      "userId": 102,
+      "startTime": "2024-07-01T09:00",
+      "endTime": "2024-07-01T11:00",
+      "status": "PENDING"
+    }
+  ]
+  

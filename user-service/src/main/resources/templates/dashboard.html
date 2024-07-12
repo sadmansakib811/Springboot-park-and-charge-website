@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <h1 style="text-align: center;color: blueviolet;" th:if="${user.role == 'STATION_OWNER'}">Station Service</h1>
+    <h1 style="text-align: center;color: green;" th:if="${user.role == 'CAR_OWNER'}">Station Service</h1>
+    
+
+
+
+<div
+  class="hero min-h-screen"
+  style="background-image: url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.jpg);">
+  <div class="hero-overlay bg-opacity-60"></div>
+  <div class="hero-content text-neutral-content text-center">
+    <div class="max-w-md">
+      <h1 class="mb-5 text-5xl font-bold">Welcome, <span th:text="${user.username}">User</span>!</h1>
+      <p class="mb-5">
+        Welcome InfiniteLooper"s to Park and ChargeWorlds Best Electric Vehichele Parking and Charging Station website. Book for parking and cahrging also find Customer in German for rent your Station.
+      </p>
+     
+      <a class="btn btn-primary" th:if="${user.role == 'STATION_OWNER'}" href="/stations">
+        <button>View Stations</button>
+    </a>
+    <a class="btn btn-primary" th:if="${user.role == 'STATION_OWNER'}" href="/stations/create">
+        <button>Create Station</button>
+    </a>
+    <a class="btn btn-primary" th:if="${user.role == 'CAR_OWNER'}" href="/bookings">
+        <button>View Bookings</button>
+    </a>
+    <a class="btn btn-primary" th:if="${user.role == 'CAR_OWNER'}" href="/bookings/create">
+        <button>Create Booking</button>
+    </a>
+    <a class="btn btn-danger" style="justify-content: center; align-items: center;" href="/logout">Logout</a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

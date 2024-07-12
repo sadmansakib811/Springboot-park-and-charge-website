@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit Station</title>
+</head>
+<body>
+<h1>Edit Station</h1>
+<form th:action="@{/stations/update}" th:object="${station}" method="post">
+    <input type="hidden" th:field="*{id}" />
+    <label for="name">Name:</label>
+    <input type="text" id="name" th:field="*{name}" /><br/>
+    <label for="totalParkingPlaces">Total Parking Places:</label>
+    <input type="number" id="totalParkingPlaces" th:field="*{totalParkingPlaces}" /><br/>
+    <label for="totalChargingPlaces">Total Charging Places:</label>
+    <input type="number" id="totalChargingPlaces" th:field="*{totalChargingPlaces}" /><br/>
+    <label for="pricePerHour">Price Per Hour:</label>
+    <input type="number" id="pricePerHour" th:field="*{pricePerHour}" /><br/>
+    <button type="submit">Save</button>
+</form>
+<a href="/stations">Back to Station List</a>
+</body>
+</html>

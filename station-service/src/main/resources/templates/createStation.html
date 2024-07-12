@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Create Station</title>
+</head>
+<body>
+<h1>Create Station</h1>
+<form id="create-station-form" th:action="@{/stations/create}" method="post" th:object="${station}">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" th:field="*{name}">
+    </div>
+    <div>
+        <label for="totalParkingPlaces">Total Parking Places:</label>
+        <input type="number" id="totalParkingPlaces" name="totalParkingPlaces" th:field="*{totalParkingPlaces}">
+    </div>
+    <div>
+        <label for="totalChargingPlaces">Total Charging Places:</label>
+        <input type="number" id="totalChargingPlaces" name="totalChargingPlaces" th:field="*{totalChargingPlaces}">
+    </div>
+    <div>
+        <label for="pricePerHour">Price Per Hour:</label>
+        <input type="number" step="0.01" id="pricePerHour" name="pricePerHour" th:field="*{pricePerHour}">
+    </div>
+    <div>
+        <button type="submit">Create Station</button>
+    </div>
+</form>
+<a href="http://localhost:8081/dashboard">Back to Dashboard</a>
+<script>
+document.getElementById('create-station-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const form = event.target;
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => {
+        if (response.ok) {
+            showSuccessMessage('Station created successfully!', '/stations');
+        } else {
+            throw new Error('Failed to create station');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('An error occurred while creating the station.');
+    });
+});
+
+function showSuccessMessage(message, redirectUrl) {
+    alert(message); // Simple alert for success message
+    setTimeout(() => {
+        window.location.href = redirectUrl;
+    }, 2000); // Redirect after 2 seconds
+}
+</script>
+</body>
+</html>

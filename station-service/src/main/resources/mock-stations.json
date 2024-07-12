@@ -1,0 +1,17 @@
+[
+    {
+      "id": 1,
+      "name": "Station One",
+      "totalParkingPlaces": 10,
+      "totalChargingPlaces": 5,
+      "pricePerHour": 10.0
+    },
+    {
+      "id": 2,
+      "name": "Station Two",
+      "totalParkingPlaces": 15,
+      "totalChargingPlaces": 8,
+      "pricePerHour": 5.0
+    }
+  ]
+  

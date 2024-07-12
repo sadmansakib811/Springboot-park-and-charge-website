@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Manage Bookings for Station</title>
+    <script>
+        function showSuccessMessage(message) {
+            alert(message);
+            window.location.reload();
+        }
+    </script>
+</head>
+<body>
+    <h1>Manage Bookings for Station</h1>
+    <p>Station ID: <span th:text="${stationId}"></span></p>
+    <table>
+        <thead>
+            <tr>
+                <th>Booking ID</th>
+                <th>User ID</th>
+                <th>Station Name</th>
+                <th>Total Price</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="booking : ${bookings}">
+                <td th:text="${booking.id}"></td>
+                <td th:text="${booking.userId}"></td>
+                <td th:text="${booking.stationName}"></td>
+                <td th:text="${booking.totalPrice}"></td>
+                <td th:text="${booking.startTime}"></td>
+                <td th:text="${booking.endTime}"></td>
+                <td th:text="${booking.status}"></td>
+                <td>
+                    <form th:action="@{/stations/{stationId}/updateStatus/{bookingId}/ACCEPTED(stationId=${stationId}, bookingId=${booking.id})}" method="post" onsubmit="showSuccessMessage('Booking accepted successfully!')">
+                        <button type="submit">Accept</button>
+                    </form>
+                    <form th:action="@{/stations/{stationId}/updateStatus/{bookingId}/REJECTED(stationId=${stationId}, bookingId=${booking.id})}" method="post" onsubmit="showSuccessMessage('Booking rejected successfully!')">
+                        <button type="submit">Reject</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a th:href="@{/stations}">Back to Station List</a>
+    <a href="http://localhost:8081/dashboard">Back to Dashboard</a>
+</body>
+</html>

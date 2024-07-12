@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body>
+<h1>Infinite Loopers User Service</h1>
+<form action="/login" method="post" th:object="${user}">
+   <!-- daisy ui -->
+<div class="hero bg-base-200 min-h-screen">
+    <div class="hero-content flex-col lg:flex-row-reverse">
+      <div class="text-center lg:text-left">
+        <h1 class="text-5xl font-bold">Login now!</h1>
+        <p class="py-6">
+          One of the Best place to find a place for park and charge your car.
+        </p>
+      </div>
+      <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+        <form class="card-body">
+          <div style="padding: 5px;" class="form-control">
+            <label class="label">
+              <span class="label-text">Username:</span>
+            </label>
+            <input type="text" id="username" name="username" placeholder="username"  th:field="*{username}" class="input input-bordered" required />
+          </div>
+          <div style="padding: 5px;" class="form-control">
+            <label class="label">
+              <span class="label-text">Password</span>
+              
+
+            </label>
+            
+            <input type="password" id="password" name="password" th:field="*{password}" placeholder="password" class="input input-bordered" required />
+            <label class="label">
+              <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
+            </label>
+          </div>
+          <div style="padding: 5px;" class="form-control mt-6">
+            <button type="submit" class="btn btn-primary">Login</button>
+            
+          </div>
+          <a style="padding: 5px; margin-left: 10px; color: blue; font-size: 16px;" href="/register"><u>Register</u></a>
+        </form>
+      </div>
+    </div>
+  </div> 
+
+</form>
+
+<div th:if="${error}">
+    <p th:text="${error}" style="color: red;"></p>
+</div>
+
+
+  
+</body>
+</html>
+<!--  -->

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Station Details</title>
+</head>
+<body>
+    <h1>Station Details</h1>
+    <p>Station Name: <span th:text="${station.name}">Station Name</span></p>
+    <p>Location: <span th:text="${station.location}">Location</span></p>
+    <p>Price per Hour: <span th:text="${station.pricePerHour}">Price per Hour</span></p>
+    <p>Capacity: <span th:text="${station.capacity}">Capacity</span></p>
+    <a th:href="@{/stations}">Back to Stations</a>
+</body>
+</html>
