@@ -5,12 +5,6 @@
 
 The Station and Booking Management System is a microservice-based application designed to manage electric vehicle (EV) charging stations and their bookings. It allows users to register as car owners or station owners, create and manage charging stations, and handle bookings. The system was developed using Spring Boot, Spring MVC, REST, and Thymeleaf for the user interface.
 
-## Team Members
-
-- Sadman Sakib
-- Farhana Binta Shaheed
-
-Both team members contributed equally to the development of this project.
 
 ## Technologies Used
 
