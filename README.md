@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Park and Charge Station By Infinite Loopers
 
 ## Project Overview
@@ -190,6 +190,4 @@ Model: Defines the booking entity.
 This project demonstrates the implementation of a microservice-based application using Spring Boot and related technologies. Both Sadman Sakib and Farhana Binta Shaheed contributed equally to the development and completion of this project. We hope this readme file helps you set up and run the application smoothly. If you encounter any issues, feel free to reach out to us.
 
 =======
-# Springboot-park-and-charge-website
-The Station and Booking Management System is a SpringBoot based microservice-based application designed to manage electric vehicle (EV) charging stations and their bookings
->>>>>>> origin/main
+
